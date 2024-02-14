@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test-1</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-image: url("https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1486&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-repeat: no-repeat;
+      width: 70%;
+      background-position: center;
+      font-family: bold;
+    }
+    h3 {
+      background-color: #00ccff;
+      color: #ffffff;
+      margin: 0 auto;
+      text-align: center;
+      width: 50%;
+      font-family: Verdana;
+      padding: 5px;
+      border-radius: 6px;
+    }
+    table,
+    tr,
+    td {
+      width: 50%;
+      border: solid 1px black;
+      margin: 0 auto;
+      border-spacing: 1px;
+      border-radius: 6px;
+      color: #009900;
+      background-color: #f2f2f2;
+      padding: 1px;
+    }
+    #submit {
+      color: #ffffff;
+      background-color: #00ccff;
+      margin: 0 auto;
+      padding: 5px;
+      width: 50%;
+      font-family: Verdana;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    #result {
+      font-size: 20px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    <!-- Question-1 -->
+    <!-- <div>
+      <label for="inputtext">Enter The Text</label><br />
+      <input type="text" name="inputtext" id="inputtext" /><br />
+      <button onclick="countbtn()">Click</button>
+    </div> -->
+
+    <!-- Question-2 -->
+    <h3>Your Admission</h3>
+    <form action="" onsubmit="return display()">
+      <table>
+        <tr>
+          <td><label for="sname">Student Name</label></td>
+          <td>
+            <input
+              type="text"
+              id="sname"
+              placeholder="Enter the student name"
+              required
+              pattern="[a-zA-Z0-9]+"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>Phone Number</label></td>
+          <td>
+            <input
+              type="text"
+              id="phno"
+              placeholder="Enter the Phone Number"
+              required
+              pattern="[789][0-9]{9}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>Admission Id</label></td>
+          <td>
+            <input
+              type="number"
+              id="aid"
+              placeholder="Enter the Admission Id"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="admissiondate"> Date of Admission</label></td>
+          <td>
+            <input type="date" id="admissiondate" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="deptname"> Department Name</label></td>
+          <td>
+            <select name="deptname" id="deptname">
+              <option value="eee">EEE</option>
+              <option value="ece">ECE</option>
+              <option value="cse">CSE</option>
+              <option value="mech">MECH</option>
+              <option value="civil">CIVIL</option>
+              <option value="it">IT</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label> Prefer College Hostel</label></td>
+          <td>
+            <input type="radio" id="yes" name="preferHostel" value="YES" />
+            <label for="yes"> YES</label>
+            <input type="radio" id="no" name="preferHostel" value="NO" />
+            <label for="no">NO</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="firstgraduate"> First Graduate</label></td>
+          <td>
+            <input
+              type="checkbox"
+              id="firstGraduate"
+              name="firstGraduate"
+              value="YEs"
+            />
+            <label for="firstgraduate"> Click if you are first graduate</label>
+          </td>
+        </tr>
+        <!-- <tr>
+          <td colspan="2">
+
+          </td>
+        </tr> -->
+      </table>
+
+      <div id="result">
+        <input
+          type="submit"
+          id="submit"
+          name="submit"
+          value="CONFIRM ADMISSION"
+        />
+      </div>
+    </form>
+
+    <script>
+      // Question-1
+      //   var countbtn = () => {
+      //     var a = document.querySelector("#inputtext").value;
+      //     if (isNaN(a)) {
+      //       if (a.length <= 7) {
+      //         alert("number of consonants 7");
+      //       } else {
+      //         alert("Above 7 consonants");
+      //       }
+      //     } else {
+      //       if (a.length == 0) {
+      //         alert("No Consonants");
+      //       } else {
+      //         alert("Its Number");
+      //       }
+      //     }
+      //   };
+
+      //   Question-2
+      function display() {
+        var name = document.getElementById("sname").value;
+        console.log(name);
+        var department = document.getElementById("deptname").value;
+        var fgra = document.getElementById("firstGraduate").value;
+        console.log(department);
+        if (department === "EEE") {
+          if (fgra === true) {
+            var afess = 30000;
+            var tfess = 45000;
+            var hfess = 75000;
+            var cfees = afess + tfess + hfess;
+            console.log(cfees);
+          }
+        }
+        document.getElementById("result").innerHTML = name;
+      }
+    </script>
+  </body>
+</html>
